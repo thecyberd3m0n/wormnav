@@ -1,3 +1,5 @@
+### THIS IS FORK OF WORMNAV REPO TO DEMONSTRATE BUG IN registerForPhoneAppMessages. Try to run it in Garmin devices.
+
 WormNav
 ===================================
 
