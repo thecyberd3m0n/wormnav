@@ -767,8 +767,8 @@ public class Utils extends AppCompatActivity {
 
     public static boolean isDeviceEmulator() {
         //return Build.FINGERPRINT.startsWith("google/sdk_gphone_x86");
-        //return false;
-        return BuildConfig.FLAVOR.equals("emu");
+        return false;
+//        return BuildConfig.FLAVOR.equals("emu");
     }
 
     public static String getBaseFileNameFromUri(Uri uri) {

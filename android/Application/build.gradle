@@ -69,34 +69,23 @@ android {
 
     // Load keystore
     //def keystorePropertiesFile = rootProject.file("/home/andan/keystores/keystore.properties");
-    // if(keystorePropertiesFile == null
-    def keystorePropertiesFile = file("C:/Users/Andreas/develop/keystores/keystore.properties");
-    def keystoreProperties = new Properties()
-    try {
-        keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-    }
-    catch (FileNotFoundException e) {
-        keystoreProperties = null
-    }
+//     if(keystorePropertiesFile == null
+//    def keystorePropertiesFile = file("C:/Users/Andreas/develop/keystores/keystore.properties");
+//    def keystoreProperties = new Properties()
+//    try {
+//        keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+//    }
+//    catch (FileNotFoundException e) {
+//        keystoreProperties = null
+//    }
 
-    signingConfigs {
-        config {
-            if(keystoreProperties != null) {
-                storeFile file(keystoreProperties['storeFile'])
-                storePassword keystoreProperties['storePassword']
-                keyAlias keystoreProperties['keyAlias']
-                keyPassword keystoreProperties['keyPassword']
-            }
-        }
-    }
 
     buildTypes {
         release {
             //debuggable true
             //minifyEnabled true
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
         }
     }
 

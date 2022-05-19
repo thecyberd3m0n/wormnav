@@ -143,6 +143,7 @@ class WormNavApp extends Application.AppBase {
         }
         viewDelegate = new WormNavDelegate();
         if(Communications has :registerForPhoneAppMessages) {
+            System.println("registerForPhoneAppMessages");
             Communications.registerForPhoneAppMessages( method(:onPhone));
         }
         return [trackView, viewDelegate];
@@ -156,6 +157,7 @@ class WormNavApp extends Application.AppBase {
     }
 
     function onPhone(msg) {
+        System.println("onPhone");
         try {
             // quick check if message is in correct format
             msgData = msg.data;

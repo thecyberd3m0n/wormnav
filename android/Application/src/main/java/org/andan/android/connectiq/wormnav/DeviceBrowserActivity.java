@@ -175,9 +175,11 @@ public class DeviceBrowserActivity extends AppCompatActivity implements AdapterV
         //mConnectIQ = ConnectIQ.getInstance(this, IQConnectType.WIRELESS);
 
         Log.i(TAG, "onCreate: initialize ConnectIQ");
-        if (!Utils.isDeviceEmulator())
+        if (!Utils.isDeviceEmulator()) {
             mConnectIQ = ConnectIQ.getInstance(this, IQConnectType.WIRELESS);
-        else mConnectIQ = ConnectIQ.getInstance(this, IQConnectType.TETHERED);
+        } else {
+            mConnectIQ = ConnectIQ.getInstance(this, IQConnectType.TETHERED);
+        }
         // Initialize the SDK
         mConnectIQ.initialize(this, true, mListener);
 
